@@ -24,6 +24,10 @@
         <Complete v-if="complete">
           <button class="btn" @click="completeIt">Complete</button>
         </Complete>
+          <Landing v-if="land">
+            <button class="btn send" @click="completeIt">Send Package</button>
+            <button class="btn deliver" @click="completeIt">Deliver Package</button>
+          </Landing>
       </transition>
 
       <!--<button class="btn btn-primary" @click="status = !status">Toggle STATUS</button>
@@ -43,6 +47,7 @@ import img from "@/assets/img/logo.png";
 import Verification from "@/components/Verification";
 import Confirm from "@/components/Confirm";
 import Complete from "@/components/Complete";
+import Landing from "@/components/Landing";
 
 export default {
   name: "home",
@@ -50,7 +55,8 @@ export default {
     StoryCard,
     Verification,
     Confirm,
-    Complete
+    Complete,
+    Landing
   },
   props: {
     text: String
@@ -76,6 +82,9 @@ export default {
     },
     complete() {
       return this.$store.state.complete;
+    },
+    land() {
+      return this.$store.state.landing;
     }
   },
   methods: {

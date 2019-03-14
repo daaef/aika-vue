@@ -15,7 +15,6 @@
 
 .rightNav{
   flex-basis: 65%;
-  padding-left: 30px;
 }
 
 .leftBg .card{
@@ -54,6 +53,9 @@
   border-radius: 20px;
   margin-top: 20px;
   font-size: 20px;
+  transition: .5s;
+  top: 0;
+  box-shadow: 0px 0px 0px 0px grey;
 }
 
 .appear-enter {
@@ -74,4 +76,43 @@
   transform: scaleX(0);
   opacity: 0;
   transition: all .5s ease-in-out;
+}
+.btn.send{
+  margin-right: 20px;
+  padding-right: 80px;
+}
+
+.btn.deliver{
+  background: #ff6a00;
+  padding-right: 80px;
+  transition: .5s;
+  top: 0;
+}
+
+.btn.deliver:hover{
+  background: #f56600;
+}
+
+.btn:hover{
+  top: -2px;
+  box-shadow: 0px 10px 20px -5px grey;
+}
+
+.btn.deliver:hover:before, .btn.send:hover:before{
+  right: 20px;
+}
+
+.btn.deliver:before, .btn.send:before{
+  content: '\27A4';
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  right: 30px;
+  transition: .5s;
+}
+
+.btn.deliver, .btn.send{
+  flex-basis: 60%;
 }
